@@ -1,29 +1,32 @@
 <section [ngClass]="{'dark-mode':darkMode}">
     <div class="container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Nombre:</th>
-                    <th>Descripción</th>
-                    <th>Editar</th>
-                    <th>Borrar</th>
-                </tr>
-            </thead>
+        <div class="card cardselect text-bg-light mb-3 ">
 
-            <tbody>
-                <tr class="proyectos" *ngFor="let proyecto of proyectos">
-                    <td>{{proyecto.nombre}}</td>
-                    <td>{{proyecto.descripcion}}</td>
+            <table class="table-responsive">
+                <thead>
+                    <tr>
+                        <th>Nombre:</th>
+                        <th>Descripción</th>
+                        <th>Editar</th>
+                        <th>Borrar</th>
+                    </tr>
+                </thead>
 
-                    <td>
-                        <button class="btn btn-primary"
-                            [routerLink]="['/proyectos', 'editar', proyecto.id]">Editar</button>
-                    </td>
-                    <td>
-                        <button class="btn btn-danger ms-2" (click)="deleteProyect(proyecto.id)">Borrar</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                <tbody>
+                    <tr class="proyectos" *ngFor="let proyecto of proyectos">
+                        <td>{{proyecto.nombre}}</td>
+                        <td>{{proyecto.descripcion}}</td>
+
+                        <td>
+                            <button class="btn btn-primary"
+                                [routerLink]="['/proyectos', 'editar', proyecto.id]">Editar</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger ms-2" (click)="deleteProyect(proyecto.id)">Borrar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </section>

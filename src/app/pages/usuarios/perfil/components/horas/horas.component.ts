@@ -6,7 +6,7 @@ import { ProyectosService } from 'src/app/services/proyectos.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import Swal from 'sweetalert2';
 import * as dayjs from 'dayjs';
-import { Usuario } from 'src/app/interfaces/usuario.interface';
+
 
 @Component({
   selector: 'app-horas',

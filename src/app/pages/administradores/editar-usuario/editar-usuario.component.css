@@ -1,6 +1,5 @@
 section {
     min-height: 100vh;
-    opacity: 1.5;
 }
 
 input.ng-valid.ng-touched {
@@ -16,9 +15,12 @@ input.ng-invalid.ng-touched {
     color: hotpink;
 }
 
+.error {
+    color: hotpink;
+}
+
 form {
     padding: 15px;
-    background-color: white;
     color: black;
     opacity: .7;
 }

@@ -2,7 +2,8 @@
 
 
 <div class="selectores ">
-    <select (change)="cambioMes($event)" class="form-select form-select-sm " aria-label=".form-select-lg example">
+
+    <select (change)="cambioMes($event)" class="form-select form-select-sm" aria-label=".form-select-lg example">
         <option value="">Selecciona un mes</option>
         <option value="1">Enero</option>
         <option value="2">Febrero</option>
@@ -18,8 +19,10 @@
         <option value="12">Diciembre</option>
 
     </select>
-    <select (change)="cambioProyecto($event)" class="form-select form-select-sm " aria-label=" .form-select-lg example">
-        <option value="">selecciona un proyecto</option>
+
+
+    <select (change)="cambioProyecto($event)" class="form-select form-select-sm" aria-label=".form-select-lg example">
+        <option value="">Selecciona un proyecto</option>
         <option value="0">Todos los proyectos</option>
         <option [value]=proyecto.id *ngFor="let proyecto of proyectos ">
             {{proyecto.nombre}}</option>
@@ -29,18 +32,20 @@
     </select>
 </div>
 
+
 <!-- empieza control horas -->
 <div class="controlHoras row">
-    <div class="barras col-6">
-
-        <div style="display: block; height: 400px; width: 100%;">
-            <canvas baseChart [data]="barChartData" [options]="barChartOptions" [type]="barChartType">
-            </canvas>
-        </div>
-        <div>
+    <div class="  col-md-6 col-sm-12 ">
+        <div class="barras">
+            <div style="display: block; height:100%; width: 100%;">
+                <canvas baseChart [data]="barChartData" [options]="barChartOptions" [type]="barChartType">
+                </canvas>
+            </div>
+            <div>
+            </div>
         </div>
     </div>
-    <div class="notificaciones col-6">
+    <div class="notificaciones  col-md-6 col-sm-12  ">
         <div class="informacion ">
             <div class="card text-bg-light mb-3">
                 <div class="card-header"><strong>Horas semanales, selecciona una fecha:</strong></div>
@@ -53,7 +58,7 @@
                         <label for="fecha-fin">Fecha de fin:</label>
                         <input type="date" id="fecha-fin" [(ngModel)]="fecha_fin">
                     </div>
-                    <button class="btn btn-primary col-4" (click)="cargarFechas()">Cargar datos</button>
+                    <button class="btn col-4" (click)="cargarFechas()">Cargar datos</button>
                 </div>
                 <div class="container">
                     <div *ngIf="horasTotalesSemana !== undefined" class="cool-result">
@@ -69,9 +74,9 @@
             </div>
         </div>
         <div class="card text-bg-light mb-3 ">
-            <div class="card-header"><strong>Horas extra</strong> </div>
+            <div class="card-header"><strong>Horas extra:</strong> </div>
             <div class="card-body">
-                <p class="card-text">El número de horas extra, es de
+                <p class="card-text">El número de horas extra este mes, es de:
                     <strong style="color:red">{{totalHorasExtra}}</strong>
                 </p>
             </div>

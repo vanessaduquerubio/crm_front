@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListaUsuariosComponent } from './pages/usuarios/lista-usuarios/lista-usuarios.component';
-import { NuevoUsuarioComponent } from './pages/usuarios/nuevo-usuario/nuevo-usuario.component';
-import { EditarUsuarioComponent } from './pages/usuarios/editar-usuario/editar-usuario.component';
+import { ListaUsuariosComponent } from './pages/administradores/lista-usuarios/lista-usuarios.component';
+import { NuevoUsuarioComponent } from './pages/administradores/nuevo-usuario/nuevo-usuario.component';
+import { EditarUsuarioComponent } from './pages/administradores/editar-usuario/editar-usuario.component';
 import { RegistroComponent } from './pages/administradores/registro/registro.component';
 import { LoginComponent } from './pages/administradores/login/login.component';
 import { LoginAdminGuard, LoginUserGuard } from './guards/login-admin.guards';

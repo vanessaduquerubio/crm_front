@@ -2,9 +2,11 @@
 
     <h4 class=" mt-3">Registro de Horas</h4>
 
+
     <form class="row" [formGroup]="registroForm" (ngSubmit)="onSubmit()">
         <div class="form-group mb-2 col-12">
             <label class="form-label">Seleccionar Proyecto:</label>
+
             <select value="select" class="form-select" formControlName="proyectos_id"
                 placeholder="selecciona un proyecto">
                 <label class="form-label">Fecha:</label>
@@ -15,16 +17,16 @@
         </div>
         <div class="form-group mb-2 col-12 horas">
             <input type="time" class="form-control mb-2" formControlName="hora_entrada">
-            <button type="button" (click)="obtenerHoraEntrada()" class="btn btn-primary">Hora entrada</button>
+            <button type="button" (click)="obtenerHoraEntrada()" class="btn ">Hora entrada</button>
         </div>
         <div class="form-group mb-2 col-12 horas">
             <input type="time" class="form-control mb-2" formControlName="hora_salida">
-            <button type="button" (click)="obtenerHoraSalida()" class="btn btn-primary">Hora Salida</button>
+            <button type="button" (click)="obtenerHoraSalida()" class="btn ">Hora Salida</button>
         </div>
         <div class="form-group mb-2 col-12">
             <input type="date" class="form-control" formControlName="fecha">
         </div>
 
-        <button type="submit" class="btn btn-primary enviar" [disabled]=" !registroForm.valid">Registrar Horas</button>
+        <button type="submit" class="btn  enviar" [disabled]=" !registroForm.valid">Registrar Horas</button>
     </form>
 </div>

@@ -1,9 +1,15 @@
 <section [ngClass]="{'dark-mode':darkMode}">
     <div class="container">
         <div class="row">
-            <app-datos-perfil class="datos col-6"></app-datos-perfil>
-            <app-horas class="horas col-6"></app-horas>
-            <app-proyectos class="proyecto col-12"></app-proyectos>
+            <div class="card col-md-6 col-sm-12">
+                <app-datos-perfil></app-datos-perfil>
+            </div>
+            <div class="card col-md-6 col-sm-12 ">
+                <app-horas></app-horas>
+            </div>
+            <div class="card  col-12">
+                <app-proyectos></app-proyectos>
+            </div>
         </div>
     </div>
 </section>

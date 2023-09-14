@@ -15,10 +15,24 @@
     margin-top: 10px;
 }
 
+.btn {
+    background-color: rgb(84, 153, 199);
+
+}
+
+.btn:hover {
+    background-color: rgb(41, 128, 185);
+}
+
+.card {
+    padding: 2% 3%;
+}
+
+
 h4,
 h2 {
-    color: #007bff;
-    border-bottom: 2px solid #007bff;
+    color: rgb(84, 153, 199);
+    border-bottom: 2px solid rgb(84, 153, 199);
     padding-bottom: 5px;
     margin-bottom: 20px;
 }

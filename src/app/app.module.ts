@@ -3,9 +3,9 @@ import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListaUsuariosComponent } from './pages/usuarios/lista-usuarios/lista-usuarios.component';
-import { NuevoUsuarioComponent } from './pages/usuarios/nuevo-usuario/nuevo-usuario.component';
-import { EditarUsuarioComponent } from './pages/usuarios/editar-usuario/editar-usuario.component';
+import { ListaUsuariosComponent } from './pages/administradores/lista-usuarios/lista-usuarios.component';
+import { NuevoUsuarioComponent } from './pages/administradores/nuevo-usuario/nuevo-usuario.component';
+import { EditarUsuarioComponent } from './pages/administradores/editar-usuario/editar-usuario.component';
 import { PerfilComponent } from './pages/usuarios/perfil/perfil.component';
 import { RegistroComponent } from './pages/administradores/registro/registro.component';
 import { LoginComponent } from './pages/administradores/login/login.component';

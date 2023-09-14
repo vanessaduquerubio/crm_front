@@ -76,7 +76,13 @@ export class ProyectosComponent {
         {
           data: this.horasPorProyecto[0].map((horasProyecto: any) => horasProyecto.total_horas_dedicadas),
           label: 'Todos los proyectos',
-          backgroundColor: ['#007bff', '#198754', '#dc3545', '#ffc107'],
+          backgroundColor: ['rgb( 84, 153, 199 )',
+            'rgb( 41, 128, 185) ',
+            'rgb( 36, 113, 163 )',
+            'rgb( 31, 97, 141 )',
+            'rgb( 26, 82, 118 )',
+            'rgb(  21, 67, 96 )',
+          ],
         },
       ]
     }
@@ -127,7 +133,12 @@ export class ProyectosComponent {
           {
             data: this.horasPorProyecto[0].map((horasProyecto: any) => horasProyecto.total_horas_dedicadas),
             label: 'Todos los proyectos',
-            backgroundColor: ['#007bff', '#198754', '#dc3545', '#ffc107'],
+            backgroundColor: ['rgb( 84, 153, 199 )',
+              'rgb( 41, 128, 185) ',
+              'rgb( 36, 113, 163 )',
+              'rgb( 31, 97, 141 )',
+              'rgb( 26, 82, 118 )',
+              'rgb(  21, 67, 96 )',],
           },
         ]
       };
@@ -159,7 +170,7 @@ export class ProyectosComponent {
             datasets: [
               {
                 data: this.horasDedicadas, label: this.nombre,
-                backgroundColor: this.horasDedicadas.map((horas, index) => (index === masDe8 && horas > 8) ? '#ff0000' : '#007bff'),
+                backgroundColor: this.horasDedicadas.map((horas, index) => (index === masDe8 && horas > 8) ? '#ff0000' : 'rgb( 84, 153, 199 )'),
               },
             ]
           }

@@ -9,7 +9,7 @@ section {
 
 section form {
     margin: 10% auto;
-    width: 25vw;
+    width: 100%;
     padding: 20px;
     border: 2px solid white;
     border-radius: 10px;
@@ -48,4 +48,12 @@ input.ng-invalid.ng-touched {
 
 .error {
     color: hotpink;
+}
+
+@media(min-width:720px) {
+    section form {
+
+        width: 25%;
+
+    }
 }
