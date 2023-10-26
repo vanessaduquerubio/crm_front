@@ -76,5 +76,37 @@ main,
 }
 
 .timehub {
-    color: black;
+    font-size: 30px;
+    color: #007bff;
+    /* Color del texto en azul */
+    text-shadow: 0 0 15px rgba(0, 123, 255, 1.0), 0 0 20px rgba(0, 123, 255, 1.0), 0 0 30px rgba(0, 123, 255, 1.0);
+    /* Sombras para el efecto de neon */
+    animation: glow 1.5s infinite alternate;
+    /* Animación de brillo */
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 15px rgba(0, 123, 255, 1.0), 0 0 20px rgba(0, 123, 255, 1.0), 0 0 30px rgba(0, 123, 255, 1.0);
+    }
+
+    100% {
+        text-shadow: 0 0 20px rgba(0, 123, 255, 1.0), 0 0 25px rgba(0, 123, 255, 1.0), 0 0 35px rgba(0, 123, 255, 1.0);
+    }
+}
+
+
+i.fas.fa-arrow-up {
+    font-size: 24px;
+
+    color: #007bff;
+
+}
+
+
+p.float-end a {
+    text-decoration: none;
+
+    color: #007bff;
+
 }
