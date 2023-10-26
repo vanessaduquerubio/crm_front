@@ -9,11 +9,11 @@ export class SendmailService {
 
   private httpClient = inject(HttpClient);
 
-  sendMail(email:any) {
+  sendMail(email: any) {
     const body = { "email": email };
 
     return firstValueFrom(
-      this.httpClient.post<any>('http://localhost:3000/send-email',body)
+      this.httpClient.post<any>('https://crm-back1.onrender.com/send-email', body)
     )
   }
 }

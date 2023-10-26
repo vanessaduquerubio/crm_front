@@ -1,42 +1,46 @@
-<div class="container">
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+<section [ngClass]="{'dark-mode':darkMode}">
+    <div class="container">
+        <div class="card">
+            <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
-        <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="text" class="form-control" formControlName="email">
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="text" class="form-control" formControlName="email">
 
-            <p class="error" *ngIf="checkError('email','required')">
-                Este campo es obligatorio
-            </p>
+                    <p class="error" *ngIf="checkError('email','required')">
+                        Este campo es obligatorio
+                    </p>
 
-            <p class="error" *ngIf="checkError('email', 'pattern')">
-                El formato del correo electrónico es incorrecto.
-            </p>
+                    <p class="error" *ngIf="checkError('email', 'pattern')">
+                        El formato del correo electrónico es incorrecto.
+                    </p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" formControlName="password">
+
+                    <p class="error" *ngIf="checkError('password','required')">
+                        Este campo es obligatorio
+                    </p>
+
+                    <p class="error" *ngIf="checkError('password','pattern')">
+                        La password mínima es de 8 caracteres y debe contener: mayusculas, minusculas y numeros </p>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Teléfono</label>
+                    <input type="text" class="form-control" formControlName="telefono">
+
+                    <p class="error" *ngIf="checkError('telefono','required')">
+                        Este campo es obligatorio
+                    </p>
+
+                    <p class="error" *ngIf="checkError('telefono', 'minlength')">
+                        El telefono debe tener como mínimo 9 numeros
+                    </p>
+                </div>
+
+                <input type="submit" value="Enviar" class="btn" [disabled]="!formulario.valid">
+            </form>
         </div>
-        <div class="mb-3">
-            <label class="form-label">Password</label>
-            <input type="password" class="form-control" formControlName="password">
-
-            <p class="error" *ngIf="checkError('password','required')">
-                Este campo es obligatorio
-            </p>
-
-            <p class="error" *ngIf="checkError('password','pattern')">
-                La password mínima es de 8 caracteres y debe contener: mayusculas, minusculas y numeros </p>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Teléfono</label>
-            <input type="text" class="form-control" formControlName="telefono">
-
-            <p class="error" *ngIf="checkError('telefono','required')">
-                Este campo es obligatorio
-            </p>
-
-            <p class="error" *ngIf="checkError('telefono', 'minlength')">
-                El telefono debe tener como mínimo 9 numeros
-            </p>
-        </div>
-
-        <input type="submit" value="Enviar" class="btn btn-primary" [disabled]="!formulario.valid">
-    </form>
-</div>
+    </div>
+</section>

@@ -19,7 +19,7 @@ export class UsuariosService {
 
   router = inject(Router)
   constructor() {
-    this.baseUrl = 'http://localhost:3000/api/usuarios'
+    this.baseUrl = 'https://crm-back1.onrender.com/api/usuarios'
   };
 
   getAll(): Promise<Usuario[] | any> {

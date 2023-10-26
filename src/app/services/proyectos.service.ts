@@ -16,7 +16,7 @@ export class ProyectosService {
   private baseUrl: string;
 
   constructor() {
-    this.baseUrl = 'http://localhost:3000/api/proyectos'
+    this.baseUrl = 'https://crm-back1.onrender.com/api/proyectos'
   }
   getById(proyectoId: number): Promise<Proyecto | any> {
     return firstValueFrom(

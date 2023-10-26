@@ -12,7 +12,7 @@ export class AdministradoresService {
   private baseUrl: string;
 
   constructor() {
-    this.baseUrl = 'http://localhost:3000/api/admins'
+    this.baseUrl = 'https://crm-back1.onrender.com/api/admins'
   }
 
   getRegistro(contenido: any): Promise<Administrador> {

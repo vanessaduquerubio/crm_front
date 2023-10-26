@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DarkModeService } from 'src/app/services/dark-mode.service';
 import { ProyectosService } from 'src/app/services/proyectos.service';
 import Swal from 'sweetalert2';
 
@@ -15,6 +16,7 @@ export class EditarProyectosComponent {
   proyectosService = inject(ProyectosService)
   router = inject(Router);
   activatedRoute = inject(ActivatedRoute);
+  darkModeService = inject(DarkModeService)
 
 
   proyectoId: number = 0
@@ -55,5 +57,9 @@ export class EditarProyectosComponent {
 
       this.router.navigate(['/proyectos']);
     }
+
+  }
+  get darkMode(): boolean {
+    return this.darkModeService.darkMode;
   }
 }
