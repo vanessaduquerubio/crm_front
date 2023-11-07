@@ -2,7 +2,58 @@
     background-color: white;
 }
 
-.tiemhub {
+.timehub {
     color: white;
     text-shadow: 0 0 10px #007bff, 0 0 20px #007bff, 0 0 30px #007bff, 0 0 40px #007bff;
+}
+
+.nav-responsive-toggle {
+    display: none;
+
+
+}
+
+@media (min-width: 375px) and (max-width: 991px) {
+    .nav-responsive-toggle {
+        display: block;
+        background-color: #007bff;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        font-size: 16px;
+
+
+    }
+
+    .menu-container {
+        display: none;
+        background-color: #485159;
+        width: 140px;
+        position: absolute;
+        right: 0;
+        top: 75px;
+        border-radius: 5px 0 0px 5px;
+        z-index: 1000;
+
+    }
+
+    .menu-container.visible {
+        display: block;
+    }
+
+    .menu-container ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .menu-container ul li {
+        padding: 10px 0;
+        cursor: pointer;
+        font-size: 13px;
+
+    }
 }

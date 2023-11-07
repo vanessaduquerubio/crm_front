@@ -3,10 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Proyecto } from '../interfaces/proyecto.interface';
 import { firstValueFrom } from 'rxjs';
 
-
-
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +12,7 @@ export class ProyectosService {
   private baseUrl: string;
 
   constructor() {
-    this.baseUrl = 'https://crm-back1.onrender.com/api/proyectos'
+    this.baseUrl = 'http://localhost:3000/api/proyectos'
   }
   getById(proyectoId: number): Promise<Proyecto | any> {
     return firstValueFrom(

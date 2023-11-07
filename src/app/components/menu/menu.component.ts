@@ -11,7 +11,7 @@ import { DarkModeService } from 'src/app/services/dark-mode.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
-
+  menuVisible: boolean = false;
   showButton: boolean = true;
   usuariosService = inject(UsuariosService)
   adminServicio = inject(AdministradoresService);
@@ -44,7 +44,12 @@ export class MenuComponent {
     this.router.navigate(['/login']);
   }
 
-
+  toggleMenuVisibility(): void {
+    this.menuVisible = !this.menuVisible;
+  }
+  toggleWebMenu() {
+    this.toggleMenuVisibility();
+  }
   toggleDarkMode() {
     this.darkModeService.toggleDarkMode();
     console.log('modo oscuro' + this.darkModeService.darkMode);

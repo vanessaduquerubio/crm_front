@@ -16,33 +16,40 @@ import { NuevoProyectoComponent } from './pages/administradores/nuevo-proyecto/n
 import { EdicionUsuarioComponent } from './pages/usuarios/perfil/components/edicion-usuario/edicion-usuario.component';
 
 
+
 const routes: Routes = [
-
-
-  { path: 'proyectos/editar/:proyectoId', component: EditarProyectosComponent, canActivate: [loginGuard] },
-  {
-    path: 'login/user', component: LoginUsuariosComponent,
-    canActivate: [LoginAdminGuard, LoginUserGuard]
-  },
-  { path: 'usuarios/nuevo', component: NuevoUsuarioComponent, canActivate: [loginGuard] },
-  { path: 'proyectos/nuevo', component: NuevoProyectoComponent, canActivate: [loginGuard] },
-  { path: 'usuarios', component: ListaUsuariosComponent, canActivate: [loginGuard] },
   { path: 'proyectos', component: ListaProyectosComponent, canActivate: [loginGuard] },
-  { path: 'usuarios/perfil', component: PerfilComponent, canActivate: [loginGuardUser] },
+  { path: 'proyectos/nuevo', component: NuevoProyectoComponent, canActivate: [loginGuard] },
+  { path: 'proyectos/editar/:proyectoId', component: EditarProyectosComponent, canActivate: [loginGuard] },
+
+
+
+  { path: 'usuarios', component: ListaUsuariosComponent, canActivate: [loginGuard] },
+  { path: 'usuarios/nuevo', component: NuevoUsuarioComponent, canActivate: [loginGuard] },
   { path: 'admin/editar/:usuarioId', component: EditarUsuarioComponent, canActivate: [loginGuard] },
   { path: 'registro', component: RegistroComponent },
   {
     path: 'login', component: LoginComponent,
+    canActivate: [LoginAdminGuard]
+  },
+
+  {
+    path: 'login/user', component: LoginUsuariosComponent,
     canActivate: [LoginAdminGuard, LoginUserGuard]
   },
-  { path: '', component: InicioComponent },
+  { path: 'usuarios/perfil', component: PerfilComponent, canActivate: [loginGuardUser] },
   { path: 'usuarios/editar/:usuarioId', component: EdicionUsuarioComponent },
+
+
+  { path: '', component: InicioComponent },
+
 
   { path: '**', pathMatch: 'full', redirectTo: '' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+
 })
 export class AppRoutingModule { }

@@ -1,28 +1,29 @@
-<section [ngClass]="{'dark-mode':darkMode}">
+<section [ngClass]="{'dark-mode': darkMode}">
     <div class="container">
-        <div class="card cardselect text-bg-light mb-3 ">
-
-            <table class="table-responsive">
+        <div class="card card select text-bg-light mb-3">
+            <table class="custom-table table-responsive m-2">
                 <thead>
                     <tr>
-                        <th>Nombre:</th>
+                        <th>Nombre</th>
                         <th>Descripción</th>
-                        <th>Editar</th>
-                        <th>Borrar</th>
+                        <th class="text-center">Acciones</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     <tr class="proyectos" *ngFor="let proyecto of proyectos">
-                        <td>{{proyecto.nombre}}</td>
-                        <td>{{proyecto.descripcion}}</td>
-
                         <td>
-                            <button class="btn btn-primary"
-                                [routerLink]="['/proyectos', 'editar', proyecto.id]">Editar</button>
+                            <div class="cell-description">Nombre</div>
+                            {{proyecto.nombre}}
                         </td>
                         <td>
-                            <button class="btn btn-danger ms-2" (click)="deleteProyect(proyecto.id)">Borrar</button>
+                            <div class="cell-description">Descripción</div>
+                            {{proyecto.descripcion}}
+                        </td>
+                        <td class="buttons text-center">
+                            <button class="btn btn-primary mb-2 m-2 enlarge-on-hover"
+                                [routerLink]="['/proyectos', 'editar', proyecto.id]">Editar</button>
+                            <button class="btn btn-danger mb-2 m-2 enlarge-on-hover"
+                                (click)="deleteProyect(proyecto.id)">Borrar</button>
                         </td>
                     </tr>
                 </tbody>

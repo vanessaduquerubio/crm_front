@@ -6,7 +6,7 @@ export const LoginAdminGuard = () => {
     const router = inject(Router);
 
     if (localStorage.getItem('admins_token')) {
-        router.navigate(['/usuarios']);
+        router.navigate(['usuarios']);
         return false;
     } else {
         return true;
@@ -17,7 +17,7 @@ export const LoginUserGuard = () => {
     const router = inject(Router);
 
     if (localStorage.getItem('user_token')) {
-        router.navigate(['/usuarios/perfil']);
+        router.navigate(['usuarios', 'perfil']);
         return false;
     } else {
         return true;

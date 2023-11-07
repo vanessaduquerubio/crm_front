@@ -18,7 +18,7 @@ export class PerfilComponent {
     return this.darkModeService.darkMode;
   }
   constructor() {
-    this.title.setTitle('Peril Usuario')
+    this.title.setTitle('Perfil Usuario')
   }
 }
 

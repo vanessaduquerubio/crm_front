@@ -13,7 +13,7 @@ export class SendmailService {
     const body = { "email": email };
 
     return firstValueFrom(
-      this.httpClient.post<any>('https://crm-back1.onrender.com/send-email', body)
+      this.httpClient.post<any>('http://localhost:3000/api/send-email', body)
     )
   }
 }

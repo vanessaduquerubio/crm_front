@@ -1,5 +1,5 @@
 <nav *ngIf="adminServicio.isLogged() || usuariosService.isLoggedUser()"
-        [ngClass]="{'dark-mode':darkMode, 'bgWhite':isHomePage}">
+        [ngClass]="{'dark-mode':darkMode, 'bgWhite':isHomePage, 'responsive': menuVisible, 'web-menu': !menuVisible}">
         <div class="container">
                 <header class="d-flex flex-wrap justify-content-center py-3 pb-4">
                         <a [routerLink]="['/inicio']" *ngIf="adminServicio.isLogged() || usuariosService.isLoggedUser()"
@@ -7,64 +7,73 @@
                                 <svg class="bi me-2" width="40" height="32">
                                         <use xlink:href="#bootstrap" />
                                 </svg>
-                                <span class="fs-2 tiemhub">TimeHub</span>
+                                <span class="fs-2 timehub">TimeHub</span>
                         </a>
-
-                        <ul class="nav nav-pills">
-                                <li class="nav-item"
-                                        *ngIf="usuariosService.isLoggedUser() && !usuariosService.isHomePage()">
-                                        <a [routerLink]="['/usuarios/perfil']" class="nav-link active"
-                                                aria-current="page">Mi perfil</a>
-                                </li>
-
-
-                                <li class="nav-item"><a [routerLink]="['/usuarios']" *ngIf="adminServicio.isLogged()"
-                                                class="nav-link">Lista
-                                                Usuarios</a></li>
-                                <li class="nav-item"><a [routerLink]="['/proyectos']" *ngIf="adminServicio.isLogged()"
-                                                class="nav-link">Lista Proyectos</a></li>
-                                <li class="nav-item"><a [routerLink]="['/usuarios', 'nuevo']"
-                                                *ngIf="adminServicio.isLogged()" class="nav-link">Añadir
-                                                usuario</a></li>
-                                <li class="nav-item"><a [routerLink]="['/proyectos', 'nuevo']"
-                                                *ngIf="adminServicio.isLogged()" class="nav-link">Añadir
-                                                proyecto</a></li>
-                                <li class="nav-item"><a [routerLink]="['/registro']"
-                                                *ngIf="!adminServicio.isLogged() &&!usuariosService.isLoggedUser()"
-                                                class="nav-link">Registro</a>
-                                </li>
-                                <li class="nav-item"><a [routerLink]="['/login']"
-                                                *ngIf="!adminServicio.isLogged() &&!usuariosService.isLoggedUser()"
-                                                class="nav-link">Login</a></li>
-                                <li class="nav-item"><a *ngIf="adminServicio.isLogged()" (click)="onClickLogout()"
-                                                class="nav-link">Logout</a></li>
-
-                                <!-- btn de usuario -->
-                                <div class="users" *ngIf="!adminServicio.isLogged()">
-                                        <li class="nav-item"><a [routerLink]="['/login/user']"
-                                                        *ngIf="router.url !== '/login' && !usuariosService.isLoggedUser()"
-                                                        class="nav-link"> Login
-                                                        user</a>
+                        <div class="nav-responsive-toggle" (click)="toggleMenuVisibility()">
+                                ☰
+                        </div>
+                        <div class="menu-container" [ngClass]="{'visible': menuVisible}">
+                                <ul class="nav nav-pills">
+                                        <li class="nav-item"
+                                                *ngIf="usuariosService.isLoggedUser() && !router.url.includes('usuarios/perfil')">
+                                                <a [routerLink]="['usuarios', 'perfil']" class="nav-link active"
+                                                        aria-current="page">Mi perfil</a>
                                         </li>
-                                        <li class="nav-item"><a [routerLink]="['/login']"
-                                                        *ngIf="usuariosService.isLoggedUser()"
-                                                        (click)="onClickLogoutUser()" class="nav-link"> Logout
-                                                        User</a></li>
-                                </div>
 
-
-                                <!-- boton de modo oscuro -->
-                                <div *ngIf=" !isHomePage">
-                                        <li class="nav-item"><a class="nav-link" (click)="toggleDarkMode()"
-                                                        *ngIf="this.darkModeService.darkMode">☀</a>
+                                        <li class="nav-item"><a [routerLink]="['usuarios']"
+                                                        *ngIf="adminServicio.isLogged()" class="nav-link">Lista
+                                                        Usuarios</a></li>
+                                        <li class="nav-item"><a [routerLink]="['proyectos']"
+                                                        *ngIf="adminServicio.isLogged()" class="nav-link">Lista
+                                                        Proyectos</a></li>
+                                        <li class="nav-item"><a [routerLink]="['usuarios', 'nuevo']"
+                                                        *ngIf="adminServicio.isLogged()" class="nav-link">Añadir
+                                                        usuario</a></li>
+                                        <li class="nav-item"><a [routerLink]="['proyectos', 'nuevo']"
+                                                        *ngIf="adminServicio.isLogged()" class="nav-link">Añadir
+                                                        proyecto</a></li>
+                                        <li class="nav-item"><a [routerLink]="['/registro']"
+                                                        *ngIf="!adminServicio.isLogged() &&!usuariosService.isLoggedUser()"
+                                                        class="nav-link">Registro</a>
                                         </li>
-                                        <li class="nav-item"><a class="nav-link" (click)="toggleDarkMode()"
-                                                        *ngIf="!this.darkModeService.darkMode">🌙</a>
+                                        <li class="nav-item"><a [routerLink]="['login']"
+                                                        *ngIf="!adminServicio.isLogged() &&!usuariosService.isLoggedUser()"
+                                                        class="nav-link">Login</a>
                                         </li>
-                                </div>
+                                        <li class="nav-item"><a *ngIf="adminServicio.isLogged()"
+                                                        (click)="onClickLogout()" class="nav-link">Logout</a>
+                                        </li>
+
+                                        <!-- btn de usuario -->
+                                        <div class="users" *ngIf="!adminServicio.isLogged()">
+                                                <li class="nav-item"><a [routerLink]="['/login/user']"
+                                                                *ngIf="router.url !== '/login' && !usuariosService.isLoggedUser()"
+                                                                class="nav-link">
+                                                                Login
+                                                                user</a>
+                                                </li>
+                                                <li class="nav-item"><a [routerLink]="['/login']"
+                                                                *ngIf="usuariosService.isLoggedUser()"
+                                                                (click)="onClickLogoutUser()" class="nav-link"> Logout
+                                                                User</a></li>
+                                        </div>
 
 
-                        </ul>
+                                        <!-- boton de modo oscuro -->
+                                        <div *ngIf=" !isHomePage">
+                                                <li class="nav-item"><a class="nav-link" (click)="toggleDarkMode()"
+                                                                *ngIf="this.darkModeService.darkMode">☀</a>
+                                                </li>
+                                                <li class="nav-item"><a class="nav-link" (click)="toggleDarkMode()"
+                                                                *ngIf="!this.darkModeService.darkMode">🌙</a>
+                                                </li>
+                                        </div>
+
+
+                                </ul>
+                        </div>
+
+
                 </header>
         </div>
 </nav>

@@ -60,33 +60,12 @@ export class ProyectosComponent {
     datasets: []
   }
 
-
-
   async ngOnInit() {
-    this.horasPorProyecto = await this.proyectosService.getHour(7)
     //recupero todos los proyectos
     this.proyectos = await this.proyectosService.getProyectos()
 
     this.cargarFechas()
 
-
-    this.barChartData = {
-      labels: this.proyectos.map(proyecto => proyecto.nombre),
-      datasets: [
-        {
-          data: this.horasPorProyecto[0].map((horasProyecto: any) => horasProyecto.total_horas_dedicadas),
-          label: 'Todos los proyectos',
-          backgroundColor: ['rgb( 84, 153, 199 )',
-            'rgb( 41, 128, 185) ',
-            'rgb( 36, 113, 163 )',
-            'rgb( 31, 97, 141 )',
-            'rgb( 26, 82, 118 )',
-            'rgb(  21, 67, 96 )',
-          ],
-        },
-      ]
-    }
-    console.log('horas dedicadas', this.horasDedicadas)
   }
 
   /*
@@ -133,12 +112,7 @@ export class ProyectosComponent {
           {
             data: this.horasPorProyecto[0].map((horasProyecto: any) => horasProyecto.total_horas_dedicadas),
             label: 'Todos los proyectos',
-            backgroundColor: ['rgb( 84, 153, 199 )',
-              'rgb( 41, 128, 185) ',
-              'rgb( 36, 113, 163 )',
-              'rgb( 31, 97, 141 )',
-              'rgb( 26, 82, 118 )',
-              'rgb(  21, 67, 96 )',],
+            backgroundColor: ['#007bff', '#198754', '#dc3545', '#ffc107'],
           },
         ]
       };
@@ -149,7 +123,6 @@ export class ProyectosComponent {
         datasets: [
           {
             data: this.horasExtra.map((horasProyecto: any) => horasProyecto.horas_extra_total),
-            label: 'Horas extra',
             backgroundColor: '#ff0000'
           },
         ]
@@ -170,7 +143,7 @@ export class ProyectosComponent {
             datasets: [
               {
                 data: this.horasDedicadas, label: this.nombre,
-                backgroundColor: this.horasDedicadas.map((horas, index) => (index === masDe8 && horas > 8) ? '#ff0000' : 'rgb( 84, 153, 199 )'),
+                backgroundColor: this.horasDedicadas.map((horas, index) => (index === masDe8 && horas > 8) ? '#ff0000' : '#007bff'),
               },
             ]
           }

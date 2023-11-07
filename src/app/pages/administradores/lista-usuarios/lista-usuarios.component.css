@@ -1,29 +1,155 @@
-@media (max-width: 768px) {
-    .table {
+section {
+    opacity: 1.5;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 5px;
+    text-align: left;
+}
+
+.custom-table th {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px;
+
+}
+
+.custom-table tr {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.custom-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+.edit-button {
+    padding: 8px 12px;
+    margin: 4px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    background-color: #007bff;
+    transition: transform 0.3s;
+
+}
+
+.delete-button {
+    padding: 8px 12px;
+    margin: 4px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    background-color: #dc3545;
+
+    transition: transform 0.3s;
+
+}
+
+.edit-button:hover,
+.delete-button:hover {
+    transform: scale(1.1);
+
+}
+
+
+.dark-mode .custom-table th {
+    background-color: #111;
+}
+
+.dark-mode .custom-table tr {
+    background-color: #222;
+    opacity: 0.85;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.dark-mode .edit-button,
+.dark-mode .delete-button {
+    color: #fff;
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+    .custom-table {
         font-size: 14px;
     }
 
-    .table td {
-        display: flex;
-        flex-direction: column;
-
-        padding: 10px 5px;
-
-    }
-
-    .table th {
+    .custom-table th {
         display: none;
     }
 
-    .botones {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .custom-table td {
+        display: block;
+        padding: 10px 5px;
     }
 
-    .btn {
+    .custom-table tr {
+        margin-bottom: 10px;
+    }
+
+    .edit-button,
+    .delete-button {
+        margin: 5px;
+    }
+
+    .cell-description {
+        font-size: 14px;
+        text-align: left;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #fff;
+        padding: 5px;
+        background-color: #635757;
+        display: inline;
+
+    }
+}
+
+@media (min-width: 1200px) {
+    .cell-description {
+        display: none;
+
+    }
+}
+
+@media (min-width: 360px) and (max-width: 768px) {
+    .table-header {
+        display: none;
+
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+
+    td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .cell-description {
         font-size: 12px;
-        padding: 5px 10px;
-        margin-top: 5px;
+        text-align: left;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #fff;
+        padding: 5px;
+        background-color: #635757;
+        display: inline;
+
     }
 }

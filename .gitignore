@@ -42,5 +42,5 @@ testem.log
 Thumbs.db
 
 
-image
+src/assets/images
 node_modules

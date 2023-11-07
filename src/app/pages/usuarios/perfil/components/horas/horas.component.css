@@ -11,28 +11,40 @@
     width: 45%;
 }
 
-.enviar {
-    margin-top: 10px;
-}
-
-.btn {
-    background-color: rgb(84, 153, 199);
-
-}
-
-.btn:hover {
-    background-color: rgb(41, 128, 185);
-}
-
-.card {
-    padding: 2% 3%;
-}
-
-
 h4,
 h2 {
-    color: rgb(84, 153, 199);
-    border-bottom: 2px solid rgb(84, 153, 199);
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
     padding-bottom: 5px;
     margin-bottom: 20px;
+    margin-top: 16px;
+}
+
+.enviar {
+    margin-top: 9.5px;
+}
+
+@media (min-width: 360px) and (max-width: 768px) {
+    .horas {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .horas button {
+        width: 100%;
+        margin-top: 2.5px;
+        font-size: 12px;
+
+    }
+
+    h4 {
+        font-size: 17px;
+    }
+
+    .date {
+        padding: 0 8px 0 0;
+    }
+
+
 }

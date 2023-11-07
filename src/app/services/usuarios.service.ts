@@ -19,7 +19,7 @@ export class UsuariosService {
 
   router = inject(Router)
   constructor() {
-    this.baseUrl = 'https://crm-back1.onrender.com/api/usuarios'
+    this.baseUrl = 'http://localhost:3000/api/usuarios'
   };
 
   getAll(): Promise<Usuario[] | any> {
@@ -108,7 +108,7 @@ export class UsuariosService {
   }
   isHomePage(): boolean {
     const currentUrl = this.router.url;
-    return currentUrl === '/usuarios/perfil';
+    return currentUrl === 'usuarios/perfil';
   }
 
 }
